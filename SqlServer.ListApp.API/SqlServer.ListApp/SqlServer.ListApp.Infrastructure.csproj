@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>SqlServer.ListApp.Infrastructure</AssemblyName>
+    <RootNamespace>SqlServer.ListApp.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+</Project>
