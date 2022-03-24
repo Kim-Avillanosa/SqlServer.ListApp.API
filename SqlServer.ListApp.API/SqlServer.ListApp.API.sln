@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ListApp.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ListApp.Logging", "SqlServer.ListApp.Logging\SqlServer.ListApp.Logging.csproj", "{343D3499-D7C1-4C8C-92E2-F45877F5071C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ListApp", "SqlServer.ListApp\SqlServer.ListApp.csproj", "{ECC44821-83A7-4982-ADA7-D4F4D861D4D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ListApp.Infrastructure", "SqlServer.ListApp\SqlServer.ListApp.Infrastructure.csproj", "{ECC44821-83A7-4982-ADA7-D4F4D861D4D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

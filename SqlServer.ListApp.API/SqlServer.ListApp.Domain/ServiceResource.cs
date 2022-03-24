@@ -11,12 +11,9 @@ namespace SqlServer.ListApp.Domain
     /// <typeparam name="TDataConnection">Data connection provider</typeparam>
     public interface IServiceResource<TDataConnection>
     {
-        void Register<T>(T Repository) where T : IRepository;
-
+        void AddMember<TAbstract, TConcrete>();
         T Resolve<T>(bool IsTransient = true) where T : IRepository;
     }
-
-
     
     public abstract class ServiceResource<TDataConnection> : IServiceResource<TDataConnection>
     {
@@ -26,14 +23,9 @@ namespace SqlServer.ListApp.Domain
 
         protected readonly IDictionary<string, IRepository> RepositoryInstances = new Dictionary<string, IRepository>();
 
-        protected void AddMember<TRepoAbstract, TRepoConcrete>()
+        public void AddMember<TAbstract, TConcrete>()
         {
-            Repositories.Add(typeof(TRepoAbstract).Name, typeof(TRepoConcrete));
-        }
-
-        public void Register<T>(T Repository) where T : IRepository
-        {
-            Repositories.Add(typeof(T).Name, typeof(T));
+            Repositories.Add(typeof(TAbstract).Name, typeof(TConcrete));
         }
 
         public T Resolve<T>(bool IsTransient = true) where T : IRepository
@@ -56,6 +48,8 @@ namespace SqlServer.ListApp.Domain
                 }
             }
         }
+
+       
     }
 
 }

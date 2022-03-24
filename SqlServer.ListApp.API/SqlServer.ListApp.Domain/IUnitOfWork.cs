@@ -9,18 +9,19 @@ namespace SqlServer.ListApp.Domain
     public interface IUnitOfWork : IDisposable
     {
         void Save();
-        void Rollback();
+        void Revert();
     }
 
     public abstract class UnitOfWorkBase<TServiceResource,TDataConnection> : IUnitOfWork
         where TServiceResource : IServiceResource<TDataConnection>
     {
+        protected TDataConnection DataConnection { get; set; }
 
-        public abstract  void Rollback();
+        public abstract void Revert();
 
-        public abstract  void Save();
+        public abstract void Save();
 
-        public abstract  void Dispose();
+        public abstract void Dispose();
     }
 
 
